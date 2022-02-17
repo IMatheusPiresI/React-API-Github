@@ -8,7 +8,7 @@ export const BoxItem = styled.div`
     justify-content: center;
     margin: 0px 0px 55px 0px;
     align-items: center;
-    border-radius: 130px 130px 0px 0px;
+    border-radius: 0px 120px 0px 120px;
     border: 1px solid #0000FF;
     box-shadow: 1px 0px 15px 10px #00008B;
     padding: 20px 30px;
@@ -16,13 +16,24 @@ export const BoxItem = styled.div`
     gap: 20px;
 
     &:hover{
-        padding: 25px 30px;
+        border-radius: 120px 0px 120px 0px;
         background-color: #0000;
+        animation: shadowItem 2s infinite; 
+    }
+
+
+    @keyframes shadowItem{
+        0%,100%{
+            box-shadow: 1px 0px 15px 10px #00008B;
+        }
+        50%{
+            box-shadow: 0px 0px 25px 12px #00008B;
+        }
     }
 `; 
 
 export const NameRepo = styled.p`
-    color: #fff;
+    color: #E8E8E8;
     font-size: 24px;
 
     @media (max-width: 504px){

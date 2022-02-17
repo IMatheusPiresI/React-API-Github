@@ -2,8 +2,14 @@ import styled from "styled-components";
 
 export const Loading = styled.p`
     color: #fff;
-    font-size: 50px;
+    font-size: 30px;
     display: block;
+
+
+
+    @media (max-width: 1000px){
+        font-size: 35px;
+    }
 `;
 
 export const Image = styled.img`
