@@ -74,6 +74,7 @@ function ReposContainer(){
                         setFoto('')
                         setLogin('')
                         setRepositorios([])
+                        document.querySelector('#user').style.border = '3px solid red'
                         document.querySelector('#foto').style.display = 'none'
                         document.querySelector('#loading').style.display = 'block'
                         document.querySelector('#loading').style.color = 'red'
