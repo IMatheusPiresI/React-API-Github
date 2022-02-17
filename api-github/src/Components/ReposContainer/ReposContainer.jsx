@@ -4,7 +4,7 @@ import ReposAPI from "../ReposAPI/ReposAPI";
 import Error from "../Error/Error";
 import { DadosApi } from "./ReposContainerStyle";
 
-function ReposItem(){
+function ReposContainer(){
 
     const [repositorios, setRepositorios] = useState([])
     const [login, setLogin] = useState('');
@@ -19,6 +19,7 @@ function ReposItem(){
             setFoto('')
             setLogin('')
             setRepositorios([])
+            document.querySelector('#foto').style.display = 'none'
             document.querySelector('#loading').style.display = 'block'
             setCarregando('Carregando...')
             const input = document.querySelector('#user').value
@@ -50,12 +51,14 @@ function ReposItem(){
                 axios.get(repos)
                 .then(res => {
                     const response = res.data
+                    document.querySelector('#user').style.border = '3px solid #0000FF'
                     setCarregando('')
                     setRepositorios(response)
+                    
                 })
                 .catch( () => {
+                    document.querySelector('#user').style.border = '3px solid red'
                     setErro(true)
-                    setCarregando('Usuário Não Encontrado')
                 })
                 
             
@@ -78,4 +81,4 @@ function ReposItem(){
     )
 }
 
-export default ReposItem;
+export default ReposContainer;

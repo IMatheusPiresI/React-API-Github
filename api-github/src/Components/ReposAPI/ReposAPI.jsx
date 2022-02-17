@@ -1,5 +1,6 @@
 import React from "react";
-import { BoxApiResults, Loading, BoxImg, Image, NameUser } from "./ReposItemStyle";
+import ReposItem from "../ReposItem/ReposItem";
+import { BoxApiResults, Loading, BoxImg, Image, NameUser, ItemApiRepo, LinkRepo } from "./ReposItemStyle";
 
 function ReposAPI({repositorios, foto, login, carregando}){
     return(
@@ -9,15 +10,16 @@ function ReposAPI({repositorios, foto, login, carregando}){
                 <Image src={foto} alt="Foto Perfil" />
             </BoxImg>
             <NameUser id='login'>{login}</NameUser>   
-            <ol>
+            <ItemApiRepo>
             {repositorios.map(item =>(
-                    <a key={item.id} href={item.html_url} target = '_blank' rel="noreferrer">
-                        <li style={{
-                        color: "white",
-                    }}>{item.name}</li>
-                    </a>
+                    <LinkRepo href={item.html_url} key={item.id} target = '_blank' rel="noreferrer">
+                        <ReposItem 
+                            href = {item.html_url}
+                            name = {item.name}
+                    />
+                    </LinkRepo>
                 ))}
-            </ol>
+            </ItemApiRepo>
         </BoxApiResults>
     )
 }
