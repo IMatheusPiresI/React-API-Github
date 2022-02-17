@@ -17,7 +17,7 @@ function ReposContainer(){
             document.querySelector('#user').addEventListener('keypress',(e) =>{
                 if(e.key === 'Enter'){
                     const userName = document.querySelector('#user').value
-                    if(userName.trim() != '' && userName.trim() != ' '){
+                    if(userName.trim() !== '' && userName.trim() !== ' '){
                         setErro(false)
                         setFoto('')
                         setLogin('')
